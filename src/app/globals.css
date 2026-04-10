@@ -515,7 +515,7 @@ img { max-width: 100%; display: block; }
 
 .section-header {
   text-align: center;
-  margin-bottom: clamp(40px, 6vw, 72px);
+  margin-bottom: clamp(48px, 6vw, 88px);
 }
 
 .section-tag {
@@ -542,19 +542,19 @@ img { max-width: 100%; display: block; }
 }
 
 .section-desc {
-  max-width: 600px;
+  max-width: 640px;
   margin: 20px auto 0;
   color: var(--text-muted);
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.7;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.8;
 }
 
 /* ===== ABOUT ===== */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  margin-bottom: 72px;
+  gap: clamp(32px, 5vw, 56px);
+  margin-bottom: 64px;
 }
 
 .about-text { display: flex; flex-direction: column; gap: 20px; }
@@ -580,17 +580,12 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
   font-size: 15px;
 }
-.highlight-row svg {
-  color: var(--primary);
-  flex-shrink: 0;
-  width: 22px; height: 22px;
-}
 
 /* Skills */
 .skills-col {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 20px;
 }
 
 .skill-card {
@@ -602,9 +597,9 @@ img { max-width: 100%; display: block; }
   transition: all 0.4s var(--ease);
 }
 .skill-card:hover {
-  border-color: rgba(var(--c-cyan-rgb), 0.25);
+  border-color: rgba(var(--c-cyan-rgb), 0.3);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .skill-card-title {
@@ -657,8 +652,8 @@ img { max-width: 100%; display: block; }
 .edu-timeline {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  max-width: 800px;
+  gap: 28px;
+  max-width: 900px;
   margin-inline: auto;
 }
 
@@ -742,139 +737,17 @@ img { max-width: 100%; display: block; }
 .exp-timeline {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  max-width: 900px;
+  gap: 24px;
+  max-width: 960px;
   margin-inline: auto;
 }
-
-.exp-card {
-  background: var(--surface);
-  background-image: var(--grad-surface);
-  border-radius: var(--r-lg);
-  border: 1px solid var(--card-border);
-  padding: clamp(24px, 3vw, 40px);
-  transition: all 0.4s var(--ease);
-  position: relative;
-  overflow: hidden;
-}
-.exp-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--r-lg);
-  padding: 1px;
-  background: linear-gradient(135deg, transparent, rgba(var(--c-cyan-rgb),0.15));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.exp-card:hover::before { opacity: 1; }
-.exp-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
-  border-color: rgba(var(--c-cyan-rgb), 0.2);
-}
-
-.exp-header {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 24px;
-  align-items: flex-start;
-}
-
-.exp-logo {
-  width: 60px; height: 60px;
-  background: var(--grad-glow);
-  border: 1px solid rgba(var(--c-cyan-rgb), 0.2);
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 18px;
-  color: var(--primary);
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-  font-family: var(--font-heading), sans-serif;
-}
-.exp-card:hover .exp-logo {
-  transform: scale(1.08);
-  box-shadow: var(--shadow-glow);
-}
-
-.exp-info { flex: 1; }
-
-.exp-role {
-  font-family: var(--font-heading), sans-serif;
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-
-.exp-company {
-  font-size: 16px;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-
-.exp-date {
-  font-size: 14px;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.exp-badge {
-  display: inline-block;
-  padding: 5px 14px;
-  background: rgba(var(--c-cyan-rgb), 0.1);
-  color: var(--success);
-  border: 1px solid rgba(var(--c-cyan-rgb), 0.2);
-  border-radius: var(--r-full);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-left: 12px;
-  animation: badgeGlow 2.5s ease-in-out infinite;
-}
-
-@keyframes badgeGlow {
-  0%, 100% { box-shadow: 0 0 8px rgba(var(--c-cyan-rgb), 0.15); }
-  50% { box-shadow: 0 0 18px rgba(var(--c-cyan-rgb), 0.35); }
-}
-
-.exp-body { padding-left: 80px; }
-
-.exp-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.exp-item {
-  padding-left: 24px;
-  position: relative;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 15px;
-}
-.exp-item::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  color: var(--primary);
-  font-weight: 700;
-}
+/* exp-card, exp-side, exp-main, and internals → enhanced-additions.css */
 
 /* ===== PROJECTS ===== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
 }
 
 .project-card {
@@ -900,73 +773,12 @@ img { max-width: 100%; display: block; }
 }
 .project-card:hover::after { opacity: 1; }
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-xl);
   border-color: rgba(var(--c-cyan-rgb), 0.25);
 }
-.project-card.featured { grid-column: span 2; }
-
-.project-thumb {
-  position: relative;
-  height: 200px;
-  background: linear-gradient(135deg, rgba(var(--c-cyan-rgb),0.08), rgba(var(--c-violet-rgb),0.08));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.project-thumb::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(var(--c-cyan-rgb),0.2), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.project-card:hover .project-thumb::before { opacity: 1; }
-.project-card.featured .project-thumb { height: 280px; }
-.project-thumb-icon { color: var(--primary); opacity: 0.3; }
-
-.featured-tag {
-  position: absolute;
-  top: 16px; right: 16px;
-  padding: 8px 18px;
-  background: var(--grad-primary);
-  color: var(--btn-text);
-  border-radius: var(--r-full);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: var(--shadow-glow);
-  animation: featurePulse 2.5s ease-in-out infinite;
-}
-@keyframes featurePulse {
-  0%, 100% { box-shadow: var(--shadow-glow); }
-  50% { box-shadow: var(--shadow-glow-lg); }
-}
-
-.project-body {
-  padding: 28px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.project-name {
-  font-family: var(--font-heading), sans-serif;
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 700;
-  color: var(--text);
-}
-
-.project-desc {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  flex: 1;
-}
+.project-card.featured { grid-column: 1 / -1; }
+/* project internals → enhanced-additions.css */
 
 .project-tech {
   display: flex;
@@ -975,7 +787,7 @@ img { max-width: 100%; display: block; }
 }
 
 .tech-pill {
-  padding: 7px 14px;
+  padding: 5px 12px;
   background: rgba(255,255,255,0.04);
   color: var(--text-muted);
   border: 1px solid var(--border);
@@ -992,7 +804,6 @@ img { max-width: 100%; display: block; }
   background: rgba(var(--c-violet-rgb), 0.1);
   border-color: rgba(var(--c-violet-rgb), 0.3);
   color: var(--c-violet-400);
-  transform: translateY(-2px);
 }
 
 .project-links {
@@ -1026,82 +837,7 @@ img { max-width: 100%; display: block; }
 .project-link:hover svg { transform: translateX(2px); }
 
 /* ===== PUBLICATIONS ===== */
-.pub-content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.pub-card {
-  background: var(--surface);
-  background-image: var(--grad-surface);
-  border-radius: var(--r-lg);
-  border: 1px solid var(--card-border);
-  padding: clamp(24px, 3vw, 40px);
-  display: flex;
-  gap: 28px;
-  transition: all 0.4s var(--ease);
-  position: relative;
-  overflow: hidden;
-}
-.pub-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(var(--c-cyan-rgb),0.08), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.pub-card:hover::before { opacity: 1; }
-.pub-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
-  border-color: rgba(var(--c-cyan-rgb), 0.25);
-}
-.pub-card.highlight {
-  background: linear-gradient(135deg, rgba(var(--c-cyan-rgb),0.06), rgba(var(--c-blue-rgb),0.04));
-  border: 2px solid rgba(var(--c-cyan-rgb), 0.25);
-  box-shadow: var(--shadow-glow);
-}
-
-.pub-icon {
-  width: 68px; height: 68px;
-  background: var(--grad-glow);
-  border: 1px solid rgba(var(--c-cyan-rgb), 0.2);
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-.pub-card:hover .pub-icon {
-  transform: scale(1.08) rotate(3deg);
-  box-shadow: var(--shadow-glow);
-}
-
-.pub-body { flex: 1; }
-.pub-venue {
-  font-size: 13px;
-  color: var(--primary);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.pub-title {
-  font-family: var(--font-heading), sans-serif;
-  font-size: clamp(20px, 2vw, 26px);
-  font-weight: 700;
-  color: var(--text);
-  margin-top: 8px;
-  margin-bottom: 12px;
-}
-.pub-desc {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--text-secondary);
-}
+/* pub-card, pub-badge-row, pub-body-main, pub-icon-large, pub-meta-grid → enhanced-additions.css */
 
 /* Achievements */
 .achievements-grid {
@@ -1137,22 +873,7 @@ img { max-width: 100%; display: block; }
   border-color: rgba(var(--c-cyan-rgb), 0.25);
 }
 
-.achieve-icon {
-  width: 60px; height: 60px;
-  background: var(--grad-glow);
-  border: 1px solid rgba(var(--c-cyan-rgb), 0.2);
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  margin: 0 auto 20px;
-  transition: all 0.3s ease;
-}
-.achieve-card:hover .achieve-icon {
-  transform: scale(1.12);
-  box-shadow: var(--shadow-glow);
-}
+/* .achieve-icon removed — emoji-based achieve-emoji in enhanced-additions.css */
 
 .achieve-title {
   font-family: var(--font-heading), sans-serif;

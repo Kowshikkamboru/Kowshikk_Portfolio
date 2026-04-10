@@ -3,7 +3,7 @@
 const SKILLS = {
   Languages: ["C", "Java", "Python", "JavaScript", "TypeScript", "Dart", "HTML", "CSS", "PHP", "SQL"],
   Technologies: ["Flutter", "React.js", "Next.js", "Node.js", "REST APIs", "Firebase", "Supabase", "RPA (UiPath)"],
-  "Cloud & Tools": ["AWS (Architecture)", "Cloudflare Workers", "Vercel", "Git", "GitHub", "Figma", "VS Code"],
+  Cloud & Tools: ["AWS (Architecture)", "Cloudflare Workers", "Vercel", "Git", "GitHub", "Figma", "VS Code"],
   "AI / ML": ["TensorFlow", "OpenCV", "CNN", "PSO", "Whisper (OpenAI)", "Workers AI", "Computer Vision"],
 };
 
@@ -138,7 +138,7 @@ export default function About() {
                   <p className="edu-grade">{edu.grade}</p>
 
                   {edu.highlight && (
-                    <span className="edu-highlight" style={{ color: edu.highlightColor ?? "var(--primary)", borderColor: edu.highlightColor ? `${edu.highlightColor}30` : "rgba(var(--c-cyan-rgb),0.2)" }}>
+                    <span className="edu-highlight" style={{ color: edu.highlightColor ?? "var(--primary)", borderColor: `${edu.highlightColor}30` ?? "rgba(var(--c-cyan-rgb),0.2)" }}>
                       ✦ {edu.highlight}
                     </span>
                   )}
